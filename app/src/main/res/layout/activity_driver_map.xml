@@ -21,19 +21,26 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"
                 android:id="@+id/logout"
                 android:text="logout"/>
             <Button
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"
                 android:id="@+id/history"
                 android:text="history"/>
             <Button
-                android:layout_weight="1"
-                android:layout_gravity="end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"
                 android:id="@+id/settings"
                 android:text="Settings"/>
         </LinearLayout>
@@ -41,6 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Working"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
             android:layout_margin="10sp"
             android:id="@+id/workingSwitch"/>
     </LinearLayout>
