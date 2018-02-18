@@ -31,11 +31,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
         android:id="@+id/confirm"
         android:text="confirm"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
         android:id="@+id/back"
         android:text="back"/>
 
