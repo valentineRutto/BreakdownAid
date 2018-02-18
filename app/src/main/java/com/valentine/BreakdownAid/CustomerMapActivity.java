@@ -240,7 +240,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
                                     getDriverLocation();
                                     getDriverInfo();
                                     getHasRideEnded();
-                                    mRequest.setText("Looking for Driver Location....");
+                                    mRequest.setText("Looking for BreakdownAid");
                                 }
                             }
                         }
@@ -323,14 +323,14 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
                     float distance = loc1.distanceTo(loc2);
 
                     if (distance<100){
-                        mRequest.setText("Driver's Here");
+                        mRequest.setText("BreakdownAid's Here");
                     }else{
-                        mRequest.setText("Driver Found: " + String.valueOf(distance));
+                        mRequest.setText("BreakdownAid Found: " + String.valueOf(distance));
                     }
 
 
 
-                    mDriverMarker = mMap.addMarker(new MarkerOptions().position(driverLatLng).title("your driver").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_car)));
+                    mDriverMarker = mMap.addMarker(new MarkerOptions().position(driverLatLng).title("your BreakdownAid").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_car)));
                 }
 
             }
@@ -435,7 +435,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         if (mDriverMarker != null){
             mDriverMarker.remove();
         }
-        mRequest.setText("call Uber");
+        mRequest.setText("call BreakdownAid");
 
         mDriverInfo.setVisibility(View.GONE);
         mDriverName.setText("");
