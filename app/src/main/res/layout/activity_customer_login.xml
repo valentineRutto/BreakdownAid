@@ -10,20 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email"
+        android:layout_marginTop="10dp"
         android:id="@+id/email"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="password"
         android:id="@+id/password"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="login"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
         android:id="@+id/login"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="registration"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
         android:id="@+id/registration"/>
 </LinearLayout>
