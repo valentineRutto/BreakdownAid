@@ -240,7 +240,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
                                     getDriverLocation();
                                     getDriverInfo();
                                     getHasRideEnded();
-                                    mRequest.setText("Looking for BreakdownAid");
+                                    mRequest.setText("BreakdownAid Found");
                                 }
                             }
                         }
