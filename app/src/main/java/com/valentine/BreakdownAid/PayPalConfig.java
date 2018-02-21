@@ -5,5 +5,5 @@ package com.valentine.BreakdownAid;
  */
 
 class PayPalConfig {
-    public static String PAYPAL_CLIENT_ID = "";
+    public static String PAYPAL_CLIENT_ID = "7mcpgdrfrcfwzzjq$47f3343ed771b0f53c86e95ca3e5f1ec";
 }

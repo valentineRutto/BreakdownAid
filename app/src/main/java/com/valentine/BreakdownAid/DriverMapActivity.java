@@ -129,7 +129,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
                         if(destinationLatLng.latitude!=0.0 && destinationLatLng.longitude!=0.0){
                             getRouteToMarker(destinationLatLng);
                         }
-                        mRideStatus.setText("drive completed");
+                        mRideStatus.setText("BreakdownAid completed");
 
                         break;
                     case 2:
@@ -303,7 +303,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
 
     private void endRide(){
-        mRideStatus.setText("picked customer");
+        mRideStatus.setText("Breakdown Aid");
         erasePolylines();
 
         String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -325,7 +325,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
         mCustomerInfo.setVisibility(View.GONE);
         mCustomerName.setText("");
         mCustomerPhone.setText("");
-        mCustomerDestination.setText("Destination: --");
+        mCustomerDestination.setText("Help Needed: --");
         mCustomerProfileImage.setImageResource(R.mipmap.ic_default_user);
     }
 

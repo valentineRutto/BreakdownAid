@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/customerDestination"
                     android:paddingBottom="10sp"
-                    android:text="Destination: --"/>
+                    android:text="HelpNeeded: --"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="picked customer"
+            android:text="BreakdownAid Complete"
             android:id="@+id/rideStatus"/>
 
 
