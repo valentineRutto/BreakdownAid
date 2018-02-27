@@ -199,7 +199,7 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
             .clientId(PayPalConfig.PAYPAL_CLIENT_ID);
 
     private void payPalPayment() {
-        PayPalPayment payment = new PayPalPayment(new BigDecimal(ridePrice), "USD", "Uber Ride",
+        PayPalPayment payment = new PayPalPayment(new BigDecimal(ridePrice), "USD", "BreakdownAid",
                 PayPalPayment.PAYMENT_INTENT_SALE);
 
         Intent intent = new Intent(this, PaymentActivity.class);
