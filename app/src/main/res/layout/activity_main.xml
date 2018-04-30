@@ -16,13 +16,14 @@
         android:textColor="@color/white"
         android:layout_marginTop="80dp"
         android:id="@+id/driver"/>
+
     <Button
+        android:id="@+id/customer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:textColor="@color/white"
         android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
         android:text="I'm a Customer"
-        android:id="@+id/customer"/>
+        android:textColor="@color/white" />
 
 </LinearLayout>

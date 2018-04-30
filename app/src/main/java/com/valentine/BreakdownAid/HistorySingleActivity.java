@@ -70,7 +70,7 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
     private DatabaseReference historyRideInfoDb;
 
     private LatLng destinationLatLng, pickupLatLng;
-    private String distance;
+    private String distance = "30";
     private Double ridePrice;
     private Boolean customerPaid = false;
 
@@ -117,51 +117,6 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    for (DataSnapshot child:dataSnapshot.getChildren()){
-                        if (child.getKey().equals("customer")){
-                            customerId = child.getValue().toString();
-                            if(!customerId.equals(currentUserId)){
-                                userDriverOrCustomer = "Drivers";
-                                getUserInformation("Customers", customerId);
-                            }
-                        }
-                        if (child.getKey().equals("driver")){
-                            driverId = child.getValue().toString();
-                            if(!driverId.equals(currentUserId)){
-                                userDriverOrCustomer = "Customers";
-                                getUserInformation("Drivers", driverId);
-                                displayCustomerRelatedObjects();
-                            }
-                        }
-                        if (child.getKey().equals("timestamp")){
-                            rideDate.setText(getDate(Long.valueOf(child.getValue().toString())));
-                        }
-                        if (child.getKey().equals("rating")){
-                            mRatingBar.setRating(Integer.valueOf(child.getValue().toString()));
-
-                        }
-                        if (child.getKey().equals("customerPaid")){
-                            customerPaid =true;
-                        }
-                        if (child.getKey().equals("distance")){
-                            distance = child.getValue().toString();
-                            rideDistance.setText(distance.substring(0, Math.min(distance.length(), 5)) + " km");
-                            ridePrice = Double.valueOf(distance) * 0.5;
-
-                        }
-                        if (child.getKey().equals("destination")){
-                            rideLocation.setText(child.getValue().toString());
-                        }
-                        if (child.getKey().equals("location")){
-                            pickupLatLng = new LatLng(Double.valueOf(child.child("from").child("lat").getValue().toString()), Double.valueOf(child.child("from").child("lng").getValue().toString()));
-                            destinationLatLng = new LatLng(Double.valueOf(child.child("to").child("lat").getValue().toString()), Double.valueOf(child.child("to").child("lng").getValue().toString()));
-                            if(destinationLatLng != new LatLng(0,0)){
-                                getRouteToMarker();
-                            }
-                        }
-                    }
-                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -224,6 +179,7 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
 
                         if(paymentResponse.equals("approved")){
                             Toast.makeText(getApplicationContext(), "Payment successful", Toast.LENGTH_LONG).show();
+                            historyRideInfoDb.child("customerPaid").setValue(true);
                             historyRideInfoDb.child("customerPaid").setValue(true);
                             mPay.setEnabled(false);
                         }
@@ -340,7 +296,6 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
 
             //In case of more than 5 alternative routes
             int colorIndex = i % COLORS.length;
-
             PolylineOptions polyOptions = new PolylineOptions();
             polyOptions.color(getResources().getColor(COLORS[colorIndex]));
             polyOptions.width(10 + i * 3);
